@@ -1,0 +1,28 @@
+
+pipeline {
+    agent none
+    environment {
+        PROJ_PATH = "src/github.com/cilium/cilium"
+    }
+
+    options {
+        timeout(time: 120, unit: 'MINUTES')
+        timestamps()
+    }
+
+    stages {
+        stage('Checkout') {
+            agent any
+            steps {
+                checkout scm
+                sh "echo 123"
+            }
+        }
+        stage('UnitTesting') {
+            agent any
+            steps {
+                sh "echo "Unittesting"
+            }
+        }
+    }
+}
