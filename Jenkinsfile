@@ -1,5 +1,5 @@
 def power = { String branch ->
-  if (branch == "master") {
+  if (branch == "origin/master") {
     return "yes"
   } else {
     return "NO"
