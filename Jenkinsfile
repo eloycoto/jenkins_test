@@ -1,8 +1,8 @@
 def power = { String branch ->
-  if (branch == "origin/master") {
-    return "yes"
+  if (branch == "origin/master" || branch == "master") {
+    return '."23"'
   } else {
-    return "NO"
+    return '."232"'
   }
 }
 
