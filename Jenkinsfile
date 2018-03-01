@@ -22,10 +22,12 @@ pipeline {
                 TESTDIR="${WORKSPACE}/${PROJ_PATH}"
             }
             steps {
+                sh 'env'
                 sh "cd ${TESTDIR}; ginkgo . -v"
             }
             post {
                 always {
+
                     sh 'ls -1'
                     junit '*.xml'
                 }
