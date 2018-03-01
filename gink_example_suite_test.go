@@ -23,4 +23,8 @@ var _ = Describe("MyNewTest", func() {
 	It("Test1", func() {
 		Expect(true).To(BeTrue())
 	})
+
+	It("Test1", func() {
+		Expect(false).To(BeTrue(), "Failed to build this one")
+	})
 })

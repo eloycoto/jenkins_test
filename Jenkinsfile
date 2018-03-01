@@ -27,9 +27,9 @@ pipeline {
             }
             post {
                 always {
-
                     sh 'ls -1'
                     junit '*.xml'
+                    sh 'env'
                 }
             }
         }
