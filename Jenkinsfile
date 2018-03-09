@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -8,6 +9,7 @@ pipeline {
                 echo "My second test"
                 echo "My third test"
                 sh './test.sh'
+                TEST=123
             }
             post {
                 always {
@@ -16,5 +18,11 @@ pipeline {
                 }
             }
         }
+        stage('newTest') {
+            steps {
+                sh 'echo ${TEST}'
+            }
+        }
     }
 }
+
