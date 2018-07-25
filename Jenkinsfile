@@ -8,18 +8,16 @@ pipeline {
                  environment name: 'GIT_BRANCH', value: 'origin/master'
             }
             steps {
-                echo "My new test"
-                echo "My second test"
+                sh 'env'
+                script {
+                    build(job:"jenkins_test", wait:false)
+                }
+
             }
             post {
                 always {
                     sh 'ls -1'
                 }
-            }
-        }
-        stage('newTest') {
-            steps {
-                sh 'echo "New Test stage"'
             }
         }
     }
